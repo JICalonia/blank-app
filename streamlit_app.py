@@ -8,9 +8,15 @@ st.write(
 @st.dialog("Welcome")
 def show_popup():
     st.write("Hello from the popup frame!")
-    st.button("Close")
+    
+    if st.button("Close"):
+        st.session_state.show_dialog = False
+        st.rerun()
 
 if st.button("Say hi to the datCoolPro"):
+    st.session_state.show_dialog = True
+
+if st.session_state.show_dialog:
     show_popup()
 
 st.write(
