@@ -5,6 +5,7 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/). If not, then [watch this video](https://www.youtube.com/watch?v=dQw4w9WgXcQ) for more information."
 )
 
+# button 1
 if "show_dialog" not in st.session_state:
     st.session_state.show_dialog = False
     
@@ -22,6 +23,16 @@ if st.button("Say hi to the datCoolPro"):
     st.session_state.show_dialog = True
 
 if st.session_state.show_dialog:
+    show_popup()
+
+# button 2
+
+@st.dialog("Welcome")
+def show_popup():
+    st.write("Hello from the popup frame!")
+    st.button("Close")
+
+if st.button("Button 2"):
     show_popup()
 
 st.write(
