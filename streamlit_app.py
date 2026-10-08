@@ -8,13 +8,15 @@ st.write(
 if "show_dialog" not in st.session_state:
     st.session_state.show_dialog = False
     
-@st.dialog("Welcome")
+@st.dialog("Test Pop-Up Message")
 def show_popup():
     st.write("Hello from the popup frame!")
     
     if st.button("Close"):
         st.session_state.show_dialog = False
         st.rerun()
+
+    st.button("AMORGOS 📮, GREECE 🇬🇷")
 
 if st.button("Say hi to the datCoolPro"):
     st.session_state.show_dialog = True
